@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="portfolio.html">Portofolio</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
+        </nav>
+	<button id="darkModeToggle">🌙 Dark Mode</button>
+
+    </header>
+    
+    <main>
+        <h1>Portofolio Saya</h1>
+        <div class="portfolio-item">
+            <h2>Proyek Akademik: Pengembangan Sistem Operasi "Bright" di VirtualBox</h2>
+            <p>
+                Deskripsi: Bersama tim, saya mengembangkan sistem operasi bernama Bright, yang memiliki arti "mencerahkan". OS ini dirancang untuk memberikan pengalaman pengguna yang efisien dan ringan dalam lingkungan virtual menggunakan VirtualBox.
+            </p>
+            <p>   
+                Hasil: OS Bright berhasil dijalankan dengan fitur dasar yang stabil, memberikan pengalaman dalam virtualisasi dan manajemen sistem.
+            </p>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Jalu</p>
+    </footer>
+
+	<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const darkModeToggle = document.getElementById("darkModeToggle");
+            const body = document.body;
+
+            // Cek jika dark mode sudah diaktifkan sebelumnya
+            if (localStorage.getItem("dark-mode") === "enabled") {
+                body.classList.add("dark-mode");
+                darkModeToggle.textContent = "☀️ Mode Terang";
+            }
+
+            darkModeToggle.addEventListener("click", function() {
+                body.classList.toggle("dark-mode");
+
+                if (body.classList.contains("dark-mode")) {
+                    localStorage.setItem("dark-mode", "enabled");
+                    darkModeToggle.textContent = "☀️ Mode Terang";
+                } else {
+                    localStorage.setItem("dark-mode", "disabled");
+                    darkModeToggle.textContent = "🌙 Mode Gelap";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

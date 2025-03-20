@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="portfolio.html">Portofolio</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
+        </nav>
+        <button id="darkModeToggle">🌙 Mode Gelap</button>
+    </header>
+    
+    <main>
+        <h1>Selamat Datang!</h1>
+        <div class="container">
+            <img src="profile.jpeg" alt="Foto Profil" class="profile-pic">
+            <div class="bio">
+                <h2>Data Diri</h2>
+                <p><strong>Nama:</strong> Jalu Aji Nugroho</p>
+                <p><strong>Tempat/Tanggal Lahir:</strong> Surakarta, 02 Juli 2005</p>
+                <p><strong>Tempat Tinggal:</strong> Tegal Mulyo RT 04 RW 01, Nusukan, Banjarsari, Surakarta</p>
+                <p><strong>Deskripsi Singkat:</strong>
+                    Saya memiliki hobi menonton konser dan bernyanyi. <br>
+                    Musik adalah bagian penting dalam hidup saya, <br>
+                    baik sebagai penonton yang menikmati suasana konser maupun saat mengekspresikan diri melalui nyanyian.
+                </p>
+                
+            </div>
+        </div>
+    </main>
+    
+    
+    <footer>
+        <p>&copy; 2025 Jalu Aji Nugroho</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const darkModeToggle = document.getElementById("darkModeToggle");
+            const body = document.body;
+
+            // Cek jika dark mode sudah diaktifkan sebelumnya
+            if (localStorage.getItem("dark-mode") === "enabled") {
+                body.classList.add("dark-mode");
+                darkModeToggle.textContent = "☀️ Mode Terang";
+            }
+
+            darkModeToggle.addEventListener("click", function() {
+                body.classList.toggle("dark-mode");
+
+                if (body.classList.contains("dark-mode")) {
+                    localStorage.setItem("dark-mode", "enabled");
+                    darkModeToggle.textContent = "☀️ Mode Terang";
+                } else {
+                    localStorage.setItem("dark-mode", "disabled");
+                    darkModeToggle.textContent = "🌙 Mode Gelap";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
